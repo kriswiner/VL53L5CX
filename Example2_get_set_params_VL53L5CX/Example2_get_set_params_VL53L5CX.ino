@@ -41,7 +41,7 @@ void setup(void)
     Wire.setClock(400000); // I2C frequency at 400 kHz  
     delay(1000);
 
-    I2Cscan();
+    I2Cscan(); // should show 0x29 for the VL53L5CX on the I2C bus
 
     Debugger::printf("starting\n\n");
 
@@ -49,7 +49,7 @@ void setup(void)
 
     // Fill the platform structure with customer's implementation. For this
     // example, only the I2C address is used.
-    Dev.platform.address = 0x52;
+    Dev.platform.address = 0x29;
 
     // Reset the sensor by toggling the LPN pin
     Reset_Sensor(LPN_PIN);
