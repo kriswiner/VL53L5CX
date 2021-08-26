@@ -226,9 +226,10 @@ void loop(void)
       }
       printf("\n");
     }
-    } // end of VL53L5CX interrupt handling
-
+      
     digitalWrite(LED_PIN, HIGH); delay(10); digitalWrite(LED_PIN, LOW);
+
+    } // end of VL53L5CX interrupt handling
 
     STM32.sleep();
 } /* end of main loop */
