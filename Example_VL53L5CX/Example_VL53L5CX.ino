@@ -169,7 +169,16 @@ void setup(void)
 
   // Configure the data ready interrupt
   attachInterrupt(INT_PIN, VL53L5_intHandler, FALLING);
-
+  
+  // *********
+  // tailor functionality to decrease SRAM requirement, etc
+//  #define VL53L5CX_DISABLE_AMBIENT_PER_SPAD
+//  #define VL53L5CX_DISABLE_NB_SPADS_ENABLED
+//  #define VL53L5CX_DISABLE_SIGNAL_PER_SPAD
+//  #define VL53L5CX_DISABLE_RANGE_SIGMA_MM
+//  #define VL53L5CX_DISABLE_REFLECTANCE_PERCENT
+//  #define VL53L5CX_DISABLE_MOTION_INDICATOR
+  // *********
 
   // Put the VL53L5CX to sleep
   status = vl53l5cx_set_power_mode(&Dev, VL53L5CX_POWER_MODE_SLEEP);
