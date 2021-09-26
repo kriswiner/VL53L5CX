@@ -9,7 +9,7 @@
 #include "Wire.h"
 
 #include "Debugger.hpp"
-#include "vl53l5cx_api.h"
+#include "VL53L5cx.h"
 
 static const uint8_t LED_PIN = 13;
 static const uint8_t INT_PIN =  8;
