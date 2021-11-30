@@ -13,3 +13,5 @@ I am using this [VL53L5CX](https://www.tindie.com/products/onehorse/vl53l5cx-ran
 ![VL53L5CX_Camera](https://user-images.githubusercontent.com/6698410/136470679-1ef91c97-2cd8-4039-8b47-16ca124c3251.jpg)
 
 The forefinger and hand are close and white, ceiling far and black but not much other information is apparent. More work will be required to plot range data in a more intuitive manner. Maybe using a logarithmic scale...
+
+**DualExample** shows how to use two (or more) VL53L5CX (with default I2C address of 0x29) on the same I2C bus. The sketch uses the LPN pin to disable the I2C bus on one of the VL53L5CX (at 0x29) while the I2C address of the other is changed to 0x27. After the change, both LPN pins are set to HIGH (or the pinMode can be changed to INPUT since there is a 47K pullop on the breakout board). The sensors Dev and Range classes are separately instantiated and data is read upon interrupt for each sensor seperately. The treatment is simple and a bit clunky, but effective. This procedure can be repeated for an arbitrary number (well, up to about 100) of VL53L5CX on the same I2C bus.
