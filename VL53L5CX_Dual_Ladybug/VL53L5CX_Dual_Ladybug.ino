@@ -11,7 +11,7 @@
 #include "Debugger.hpp"
 #include "st/vl53l5cx_api.h"
 
-static const uint8_t LED_PIN = 13;
+static const uint8_t LED_PIN   = 13;
 static const uint8_t INT_PIN_0 =  5;
 static const uint8_t LPN_PIN_0 =  9;
 static const uint8_t INT_PIN_1 =  8;
@@ -79,7 +79,7 @@ void setup(void)
     delay(100);
     
     Serial.println("Scan for I2C devices:");
-    I2Cscan();           // should detect VL53L5CX_0 and 0x29 and VL53L5CX_1 at 0x27   
+    I2Cscan();           // should detect VL53L5CX_0 at 0x29 and VL53L5CX_1 at 0x27   
     delay(1000);
 
     // Make sure there is a VL53L5CX_0 sensor connected
